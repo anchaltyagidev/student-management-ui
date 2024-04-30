@@ -5,7 +5,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: rgb(255, 255, 255);
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(254, 211, 255, 1) 100%);
+    background: radial-gradient(circle, rgba(0, 227, 249, 0.6) 0%, rgba(33, 222, 112, 0.6111694677871149) 100%);
 }
 
 .flex-container {
@@ -38,11 +38,14 @@ form {
     border-radius: 6px;
     margin: 12px;
     padding: 12px;
+    border: 1px dashed #33186B;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .add-button-container {
     margin: 12px;
+    border: 1px dashed #33186B;
+    border-radius: 6px;
     background-color: white;
     padding: 12px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -64,14 +67,22 @@ input {
 }
 
 button {
-    padding: 6px;
+    padding: 6px 12px;
     margin: 4px;
     font-size: 0.8rem;
-    border: none;
     text-align: center;
-    background-color: navy;
+    background-color: rgba(0, 227, 249, 1);
     border-radius: 6px;
-    color: white;
+    color: black;
+    border: 1px solid #33186B;
+}
+
+.btn-large {
+    padding: 12px 24px;
+}
+
+.icon {
+    font-size: inherit !important;
 }
 
 button:hover {
@@ -95,11 +106,66 @@ thead {
     font-size: 0.8rem;
 }
 
+.table-container {
+    overflow-y: scroll;
+    max-height: 500px;
+    display: block;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0 1em;
+    outline: 2px;
 }
 
 th {
     padding: 12px;
+}
+
+/* show modal to edit row value */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
