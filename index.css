@@ -107,7 +107,7 @@ thead {
 }
 
 .table-container {
-    overflow-y: scroll;
+    overflow-y: hidden;
     max-height: 500px;
     display: block;
 }

@@ -72,8 +72,11 @@ class Student {
 
         // check for numeric
         if (isNaN(this.contact)) {
-            console.log(this.contact)
             return 'contact should be all numeric'
+        }
+
+        if (students.find(x => x.id == this.id)) { 
+            return 'id should be unique'
         }
     }
 }
@@ -100,7 +103,7 @@ function studentToHTML(student) {
         editemail.value = student.email
         editcontact.value=student.contact
     });
-    
+
     const tdRemoveButton = document.createElement('Button')
     tdRemoveButton.addEventListener("click", (e) => { 
         i = students.indexOf(student)
@@ -146,6 +149,12 @@ function addStudent(e) {
     
     row = studentToHTML(student)
     data.append(row) 
+
+    tableContainer = document.getElementsByClassName('table-container')[0]
+    table = document.getElementById('datatable')
+    if (table.scrollHeight > 500) { 
+        tableContainer.style.overflowY = 'scroll'
+    }
 
     // empty form
     name.value = ""
